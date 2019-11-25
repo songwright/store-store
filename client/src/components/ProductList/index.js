@@ -12,6 +12,7 @@ function ProductList() {
   const getProducts = () => {
     dispatch({ type: LOADING });
     API.getProducts().then(results => {
+      console.log("prodcutlist getproducts:", results.data)
       dispatch({
         type: UPDATE_PRODUCTS,
         products: results.data

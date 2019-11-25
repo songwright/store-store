@@ -43,6 +43,7 @@ module.exports = {
         })?format=json&apiKey=${process.env.BEST_BUY_API_KEY}`
       )
       .then(results => {
+        console.log("findbyID controller:", results.data.products[0])
         res.json(results.data.products[0]);
       })
       .catch(err => console.log(err));

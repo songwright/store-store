@@ -15,7 +15,40 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
+  console.log("state, action", state, action)
   switch (action.type) {
+    case UPDATE_PRODUCTS:
+      return {
+        ...state,
+        products: [...action.products],
+        loading: false
+      };
+    case LOADING:
+      return {
+        ...state,
+        loading: true
+      };
+    case SET_CURRENT_PRODUCT:
+      return {
+        ...state,
+        currentProduct: action.product,
+        loading: false
+      };
+    case ADD_TO_CART:
+      return {
+        ...state,
+        cart: action.product,
+        loading: false
+      };
+    case ADD_ALL_TO_CART:
+      return {
+        ...state,
+        cart: [...action.cart],
+        loading:false
+
+      }
+
+
     default:
       return state;
   }
