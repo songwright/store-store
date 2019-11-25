@@ -4,7 +4,7 @@ import data from "../data.json";
 export default {
   // Gets all products
   getProducts: function(query = "") {
-    return axios.get("http://localhost:3001/api/products?=" + query);
+    return axios.get("http://localhost:3001/api/products?q=" + query);
   },
   // Gets the product with the given id
   getProduct: function(id) {
