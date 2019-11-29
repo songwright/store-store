@@ -4,7 +4,7 @@ const axios = require("axios");
 module.exports = {
   findAll: function(req, res) {
     if (req.query.q === "") {
-      req.query.q = "iphone";
+      req.query.q = "rings";
     }
     axios
       .get(
@@ -13,7 +13,7 @@ module.exports = {
         }*)?format=json&apiKey=${process.env.BEST_BUY_API_KEY}`
       )
       .then(results => {
-        console.log("RESULTS: ", results.data);
+        console.log("RESULTS: ", results.data.products);
         res.json([...results.data.products]);
       })
       .catch(err => console.log(err));
