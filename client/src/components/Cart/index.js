@@ -22,6 +22,7 @@ const Cart = () => {
   };
 
   const removeFromCart = product => {
+    console.log("removecart:", state)
     dispatch({
       type: REMOVE_FROM_CART,
       productId: product.productId

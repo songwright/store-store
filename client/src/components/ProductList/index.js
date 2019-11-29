@@ -13,9 +13,11 @@ function ProductList() {
     dispatch({ type: LOADING });
     API.getProducts().then(results => {
       console.log("prodcutlist getproducts:", results.data)
+      let productList = results.data.filter(pro=>pro.productId !== null)
+      console.log("product after filter:", productList)
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: results.data
+        products: productList
       })
       
     })
