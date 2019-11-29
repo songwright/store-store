@@ -17,38 +17,61 @@ const { Provider } = StoreContext;
 const reducer = (state, action) => {
   console.log("state, action", state, action)
   switch (action.type) {
-    case UPDATE_PRODUCTS:
-      return {
-        ...state,
-        products: [...action.products],
-        loading: false
-      };
-    case LOADING:
-      return {
-        ...state,
-        loading: true
-      };
     case SET_CURRENT_PRODUCT:
       return {
         ...state,
         currentProduct: action.product,
         loading: false
       };
+    case UPDATE_PRODUCTS:
+      return {
+        ...state,
+        products: [...action.products],
+        loading: false
+      };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        products: [action.product, ...state.products],
+        loading: false
+      };
+    case REMOVE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter(product => {
+          return product._id !== action._id;
+        })
+      };
     case ADD_TO_CART:
       return {
         ...state,
-        cart: action.product,
+        cart: [action.product, ...state.cart],   //  [1,2,3,] [4,1,2,3]  
         loading: false
       };
     case ADD_ALL_TO_CART:
       return {
         ...state,
-        cart: [...action.cart],
-        loading:false
-
-      }
-
-
+        cart: [...action.cart, ...state.cart],
+        loading: false
+      };
+    case UPDATE_CART:
+      return {
+        ...state,
+        cart: [...state.cart],
+        loading: false
+      };
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: state.cart.filter(product => {
+          return product.productId !== action.productId;
+        })
+      };
+    case LOADING:
+      return {
+        ...state,
+        loading: true
+      };
     default:
       return state;
   }
