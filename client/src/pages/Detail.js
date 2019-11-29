@@ -102,6 +102,7 @@ const Detail = props => {
                   className="card-img"
                   src={state.currentProduct.image}
                   alt="product"
+                  style={imgStyle}
                 />
                 <br />
                 {state.cart.filter(p => {
