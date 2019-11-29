@@ -116,7 +116,7 @@ const Detail = props => {
                     <i className="fa fa-remove fa-lg" />
                   </button>
                 )}
-                <div className="card-body">
+                <div className={cardBody}>
                   <h5 className="card-title">{state.currentProduct.name}</h5>
                   <div className="card-text">
                     <strong>Price:</strong>
