@@ -89,13 +89,13 @@ const Detail = props => {
     <>
       {state.currentProduct && state.cart ? (
         <Container fluid >
-          <Row style={rowStyle}>
+          <div style={rowStyle}>
             <Col size="md-2">
               <Link className="link" to="/">← Back to Products</Link>
             </Col>
-          </Row>
+          </div>
           <br />
-          <Row style={rowStyle}>
+          <div style={rowStyle}>
             <Col size="md-4">
               <div className="card">
                 <img
@@ -153,7 +153,7 @@ const Detail = props => {
               </div>
               
             </Col>
-          </Row>
+          </div>
           <br />
           <Row />
         </Container>
