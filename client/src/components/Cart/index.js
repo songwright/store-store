@@ -76,7 +76,7 @@ const Cart = () => {
                     <i className="fa fa-angle-left" /> Continue Shopping
                   </Link>
                 </td>
-                <td colspan="2" className="hidden-xs" />
+                <td colSpan="2" className="hidden-xs" />
                 <td className="hidden-xs text-center">
                   <strong>Total: {calculateTotal()}</strong>
                 </td>
