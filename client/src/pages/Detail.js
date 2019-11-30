@@ -119,7 +119,7 @@ const Detail = props => {
                 <div style={cardBody}>
                   <h5 className="card-title">{state.currentProduct.name}</h5>
                   <div className="card-text">
-                    <strong>Price:</strong>
+                    <strong>Price: </strong>
                     {state.currentProduct.salePrice}
                   </div>
                   <p style={cardStyle}>
@@ -130,15 +130,22 @@ const Detail = props => {
                 <div>
                   {state.currentProduct.width ? 
                     <div>
-                      <strong>Width:</strong>
+                      <strong>Width: </strong>
                       {state.currentProduct.width}
                     </div>
                     : <></>
                   }
                   {state.currentProduct.weight ? 
                     <div>
-                      <strong>Weight:</strong>
+                      <strong>Weight: </strong>
                       {state.currentProduct.weight}
+                    </div>
+                    : <></>
+                  }
+                  {state.currentProduct.longDescription ?
+                    <div>
+                      <strong>Description: </strong>
+                      {state.currentProduct.longDescription}
                     </div>
                     : <></>
                   }
