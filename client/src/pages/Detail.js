@@ -122,7 +122,7 @@ const Detail = props => {
                     <strong>Price:</strong>
                     {state.currentProduct.salePrice}
                   </div>
-                  <p className={cardStyle}>
+                  <p style={cardStyle}>
                     {state.currentProduct.shortDescription}
                   </p>
                 </div>
