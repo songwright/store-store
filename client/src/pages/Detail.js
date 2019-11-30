@@ -112,7 +112,7 @@ const Detail = props => {
                     <i className="fa fa-shopping-cart fa-lg" />
                   </button>
                 ) : (
-                  <button className="btn btn-danger" onClick={removeFromCart}>
+                  <button className={buttonStyle} onClick={removeFromCart}>
                     <i className="fa fa-remove fa-lg" />
                   </button>
                 )}
