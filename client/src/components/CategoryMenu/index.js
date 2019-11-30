@@ -34,7 +34,7 @@ function CategoryMenu() {
         </div>
       { category.map( item => 
         <Col size="md-2">
-          <button className="category-item" onClick={() => {
+          <button className="category-item" key={item.index} onClick={() => {
             handleClick(item)
           }}>
             {item}
